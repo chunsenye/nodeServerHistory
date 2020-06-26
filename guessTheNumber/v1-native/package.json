@@ -1,0 +1,15 @@
+{
+  "name": "guessthenumber",
+  "version": "1.0.0",
+  "description": "猜数字",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chunsenye",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
