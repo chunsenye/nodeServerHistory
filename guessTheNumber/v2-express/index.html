@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        猜的数字（0～100）：<input type="number" name="guessNumber" id="guessNumber">
+        <input type="button" value="猜一下" id="btn" onclick="sendNumber()">
+        <p>结果:<span id="result" style="padding: 0 10px;color: green;"></span></p>
+    </div>
+    <script>
+        function sendNumber() {
+            const guessNumber = Number($('#guessNumber').val());
+            const result = $('#result');
+            if (guessNumber && guessNumber >= 0 && guessNumber <= 100) {
+                console.log(guessNumber);
+                $.ajax({
+                    type: 'get',
+                    url: '/guess',
+                    data: {
+                        guessNumber
+                    }
+                }).then(function (msg) {
+                    console.log('收到回复', msg);
+                    result.html(msg)
+                })
+            } else {
+                alert('不再范围内,0~100!!');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "v2-express",
+  "version": "1.0.0",
+  "description": "使用express的模块搭建的BFF",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chunsenye",
+  "license": "ISC"
+}
